@@ -7,7 +7,7 @@ import {MoviesListService} from "../../services/movies-list.service";
   styleUrls: ['./movies-list.component.css']
 })
 export class MoviesListComponent implements OnInit {
-  movies :any[]
+  movies: any[]
 
   constructor(private moviesListService: MoviesListService) {
   }
@@ -17,4 +17,12 @@ export class MoviesListComponent implements OnInit {
       .subscribe(value => this.movies = value.results)
   }
 
+  goToNextPage() {
+    this.moviesListService.next()
+      .subscribe(value => this.movies = value?.results)
+  }
+  goToPreviousPage() {
+    this.moviesListService.previous()
+      .subscribe(value => this.movies = value?.results)
+  }
 }

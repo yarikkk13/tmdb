@@ -9,11 +9,28 @@ export class MoviesListService {
   page: number = 1;
   private url = 'https://api.themoviedb.org/3/movie/popular?api_key=5560774ec42bbecbaa78fd2d63c68e9d&language=en-US&page='
 
+  private urlBegin = 'https://api.themoviedb.org/3/movie/'
+  private urlEnd = '?api_key=5560774ec42bbecbaa78fd2d63c68e9d&language=en-US'
+
   constructor(private httpClient: HttpClient) {
   }
 
   getMovies(): Observable<any> {
     return this.httpClient.get<any>(this.url + this.page)
+  }
+
+  next(): Observable<any> {
+    this.page = this.page + 1
+    return this.httpClient.get<any>(this.url + this.page)
+  }
+
+  previous(): Observable<any> {
+    this.page = this.page - 1
+    return this.httpClient.get<any>(this.url + this.page)
+  }
+
+  getMovieById(id: any): Observable<any> {
+    return this.httpClient.get<any>(this.urlBegin + id + this.urlEnd)
   }
 
 }

@@ -1,1 +1,6 @@
-<p>movies-list works!</p>
+<app-movie [movie]="movie" *ngFor="let movie of movies"></app-movie>
+
+<div>
+  <button (click)="goToPreviousPage()">previous</button>
+  <button (click)="goToNextPage()">next</button>
+</div>
