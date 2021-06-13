@@ -5,13 +5,13 @@ import {Observable} from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
-export class GenresService {
-  private url = 'https://api.themoviedb.org/3/genre/movie/list?api_key=5560774ec42bbecbaa78fd2d63c68e9d&language=en-US'
+export class DemoService {
+  private url = 'https://api.themoviedb.org/3/movie/popular?api_key=5560774ec42bbecbaa78fd2d63c68e9d&language=en-US&page=1'
 
   constructor(private httpClient: HttpClient) {
   }
 
-  getListOfGenres(): Observable<any> {
+  getDemo(): Observable<any> {
     return this.httpClient.get<any>(this.url)
   }
 }

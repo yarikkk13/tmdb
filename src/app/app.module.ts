@@ -3,32 +3,19 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './components/app/app.component';
 import {HeaderComponent} from './components/header/header.component';
-import {MoviesListComponent} from './components/movies-list/movies-list.component';
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
-import {GenresComponent} from './components/genres/genres.component';
-import {MovieComponent} from './components/movie/movie.component';
-import {SelectedMovieComponent} from './components/selected-movie/selected-movie.component';
-import {GenreComponent} from './components/genre/genre.component';
-import {SelectedPageComponent} from './components/selected-page/selected-page.component';
+import { DemoComponent } from './components/demo/demo.component';
 
 let routes: Routes = [
-  {path: 'movies', component: MoviesListComponent},
-  {path: 'movies/page/:page', component:SelectedPageComponent},
-  {path: 'movies/:id', component: SelectedMovieComponent},
-  {path: 'genres', component: GenresComponent}
+  {path:'demo',component:DemoComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    MoviesListComponent,
-    GenresComponent,
-    MovieComponent,
-    SelectedMovieComponent,
-    GenreComponent,
-    SelectedPageComponent
+    DemoComponent,
   ],
   imports: [
     BrowserModule,
