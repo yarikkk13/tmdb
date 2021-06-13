@@ -10,6 +10,7 @@ export class MovieComponent implements OnInit {
   @Input()
   movie: any;
 
+
   ngOnInit(): void {
   }
 

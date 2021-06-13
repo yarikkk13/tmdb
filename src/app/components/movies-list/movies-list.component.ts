@@ -7,22 +7,34 @@ import {MoviesListService} from "../../services/movies-list.service";
   styleUrls: ['./movies-list.component.css']
 })
 export class MoviesListComponent implements OnInit {
-  movies: any[]
+  page: any;
+  movies: any[];
+
 
   constructor(private moviesListService: MoviesListService) {
   }
 
   ngOnInit(): void {
     this.moviesListService.getMovies()
-      .subscribe(value => this.movies = value.results)
+      .subscribe(value => {
+        this.movies = value.results
+        this.page = value.page
+      })
   }
 
   goToNextPage() {
     this.moviesListService.next()
-      .subscribe(value => this.movies = value?.results)
+      .subscribe(value => {
+        this.movies = value?.results
+        this.page = value.page
+      })
   }
+
   goToPreviousPage() {
     this.moviesListService.previous()
-      .subscribe(value => this.movies = value?.results)
+      .subscribe(value => {
+        this.movies = value?.results
+        this.page = value.page
+      })
   }
 }

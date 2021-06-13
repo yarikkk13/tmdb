@@ -9,9 +9,12 @@ import {RouterModule, Routes} from "@angular/router";
 import {GenresComponent} from './components/genres/genres.component';
 import {MovieComponent} from './components/movie/movie.component';
 import {SelectedMovieComponent} from './components/selected-movie/selected-movie.component';
+import {GenreComponent} from './components/genre/genre.component';
+import {SelectedPageComponent} from './components/selected-page/selected-page.component';
 
 let routes: Routes = [
   {path: 'movies', component: MoviesListComponent},
+  {path: 'movies/page/:page', component:SelectedPageComponent},
   {path: 'movies/:id', component: SelectedMovieComponent},
   {path: 'genres', component: GenresComponent}
 ];
@@ -23,7 +26,9 @@ let routes: Routes = [
     MoviesListComponent,
     GenresComponent,
     MovieComponent,
-    SelectedMovieComponent
+    SelectedMovieComponent,
+    GenreComponent,
+    SelectedPageComponent
   ],
   imports: [
     BrowserModule,
