@@ -1,20 +1,37 @@
-<p>{{movie|json}}</p>
-<div class="card" style="width: 18rem;">
-  <img src="https://www.themoviedb.org/t/p/w220_and_h330_face{{movie.poster_path}}" class="card-img-top" alt="...">
-  <img src="https://www.themoviedb.org/t/p/w220_and_h330_face{{movie.backdrop_path}}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">{{movie.title}}</h5>
-    <p class="card-text">
-      {{movie.overview}}
-    </p>
-    <p class="card-text">
-      Release date : {{movie.release_date}}
-    </p>
-    <p class="card-text">
-      Rating : {{movie.vote_average}}
-    </p>
-    <p class="card-text">
-      Voted : {{movie.vote_count}}
+<div>
+  <div>
+    <img src="https://www.themoviedb.org/t/p/w220_and_h330_face{{movie.poster_path}}" style="width: 300px" alt="...">
+  </div>
+  <div>
+    <h2>{{movie.title}}</h2>
+  </div>
+  <div>
+    <h5>{{movie.tagline}}</h5>
+  </div>
+  <div>
+    <p>{{movie.overview}}</p>
+  </div>
+  <div>
+    <p>Release date : {{movie.release_date}}</p>
+  </div>
+  <div>
+    <p>Voted : {{movie.vote_count}}</p>
+  </div>
+  <div>
+    Genres:
+  </div>
+  <div>
+    <p *ngFor="let genre of movie.genres">{{genre.name}}</p>
+
+  </div>
+  <div>
+    <p>Budget : {{movie.budget}}</p>
+  </div>
+  <div>
+    <p>Rating :
+      <ngb-rating [rate]="movie.vote_average"></ngb-rating>
     </p>
   </div>
+
 </div>
+

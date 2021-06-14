@@ -10,8 +10,8 @@ import {MovieCardComponent} from './components/movie-card/movie-card.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MovieInfoComponent} from './components/movie-info/movie-info.component';
 import {GenresComponent} from './components/genres/genres.component';
-import { MoviesByGenreComponent } from './components/movies-by-genre/movies-by-genre.component';
-import { StarRatingComponent } from './components/star-rating/star-rating.component';
+import {MoviesByGenreComponent} from './components/movies-by-genre/movies-by-genre.component';
+import {NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
 
 let routes: Routes = [
   {
@@ -20,9 +20,11 @@ let routes: Routes = [
       {path: ':page/:id', component: MovieInfoComponent}
     ]
   },
-  {path: 'genres', component: GenresComponent, children:[
-      {path: ':name',component: MoviesByGenreComponent}
-    ]}
+  {
+    path: 'genres', component: GenresComponent, children: [
+      {path: ':name', component: MoviesByGenreComponent}
+    ]
+  }
 ];
 
 @NgModule({
@@ -34,14 +36,14 @@ let routes: Routes = [
     MovieInfoComponent,
     GenresComponent,
     MoviesByGenreComponent,
-    StarRatingComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbRatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
