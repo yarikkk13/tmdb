@@ -1,0 +1,20 @@
+<p>{{movie|json}}</p>
+<div class="card" style="width: 18rem;">
+  <img src="https://www.themoviedb.org/t/p/w220_and_h330_face{{movie.poster_path}}" class="card-img-top" alt="...">
+  <img src="https://www.themoviedb.org/t/p/w220_and_h330_face{{movie.backdrop_path}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{movie.title}}</h5>
+    <p class="card-text">
+      {{movie.overview}}
+    </p>
+    <p class="card-text">
+      Release date : {{movie.release_date}}
+    </p>
+    <p class="card-text">
+      Rating : {{movie.vote_average}}
+    </p>
+    <p class="card-text">
+      Voted : {{movie.vote_count}}
+    </p>
+  </div>
+</div>

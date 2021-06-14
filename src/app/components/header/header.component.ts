@@ -7,7 +7,8 @@ import {HeaderService} from "../../services/header.service";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  page:number
+  page: number
+
 
   constructor(private headerService: HeaderService) {
   }
@@ -16,5 +17,6 @@ export class HeaderComponent implements OnInit {
     this.headerService.getMovies()
       .subscribe(value => this.page = value.page)
   }
+
 
 }

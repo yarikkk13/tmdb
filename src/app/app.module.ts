@@ -6,11 +6,15 @@ import {RouterModule, Routes} from "@angular/router";
 import {AppComponent} from './components/app/app.component';
 import {HeaderComponent} from './components/header/header.component';
 import {MoviesListComponent} from './components/movies-list/movies-list.component';
+import { MovieCardComponent } from './components/movie-card/movie-card.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { MovieInfoComponent } from './components/movie-info/movie-info.component';
 
 let routes: Routes = [
   {
     path: 'movies', component: HeaderComponent, children: [
-      {path: ':page', component: MoviesListComponent}
+      {path: ':page', component: MoviesListComponent},
+      {path: ':page/:id', component: MovieInfoComponent}
     ]
   }
 ];
@@ -20,11 +24,15 @@ let routes: Routes = [
     AppComponent,
     HeaderComponent,
     MoviesListComponent,
+    MovieCardComponent,
+    MovieInfoComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

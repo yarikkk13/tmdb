@@ -7,8 +7,9 @@
     <button type="button" class="btn btn-outline-secondary" [routerLink]="[page+4]">{{page + 4}}</button>
   </div>
   <form class="d-flex">
-    <input class="form-control me-2" type="search" placeholder="select page" aria-label="Search">
-    <button class="btn btn-outline-success" type="submit">Submit</button>
+    <input class="form-control me-2" type="number" placeholder="select page" aria-label="Search" [(ngModel)]="page"
+           name="page">
+    <button class="btn btn-outline-success" type="submit" [routerLink]="[page]">Submit</button>
   </form>
 </div>
 <router-outlet></router-outlet>
