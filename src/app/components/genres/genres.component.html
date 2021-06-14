@@ -1,0 +1,4 @@
+<div class="btn-group-vertical" role="group" *ngFor=" let genre of genres">
+  <button type="button" class="btn btn-secondary" [routerLink]="genre.id">{{genre.name}}</button>
+</div>
+<router-outlet></router-outlet>

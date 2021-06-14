@@ -8,12 +8,16 @@ import {Observable} from "rxjs";
 export class HeaderService {
   page: number = 1;
   private url = 'https://api.themoviedb.org/3/movie/popular?api_key=5560774ec42bbecbaa78fd2d63c68e9d&language=en-US&page='
-
+  private urlGenre = 'https://api.themoviedb.org/3/genre/movie/list?api_key=5560774ec42bbecbaa78fd2d63c68e9d&language=en-US'
 
   constructor(private httpClient: HttpClient) {
   }
 
   getMovies(): Observable<any> {
-    return this.httpClient.get<any>(this.url+this.page)
+    return this.httpClient.get<any>(this.url + this.page)
+  }
+
+  getListOfGenres(): Observable<any> {
+    return this.httpClient.get<any>(this.urlGenre)
   }
 }

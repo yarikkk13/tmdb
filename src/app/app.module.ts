@@ -6,9 +6,11 @@ import {RouterModule, Routes} from "@angular/router";
 import {AppComponent} from './components/app/app.component';
 import {HeaderComponent} from './components/header/header.component';
 import {MoviesListComponent} from './components/movies-list/movies-list.component';
-import { MovieCardComponent } from './components/movie-card/movie-card.component';
+import {MovieCardComponent} from './components/movie-card/movie-card.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { MovieInfoComponent } from './components/movie-info/movie-info.component';
+import {MovieInfoComponent} from './components/movie-info/movie-info.component';
+import {GenresComponent} from './components/genres/genres.component';
+import { MoviesByGenreComponent } from './components/movies-by-genre/movies-by-genre.component';
 
 let routes: Routes = [
   {
@@ -16,7 +18,10 @@ let routes: Routes = [
       {path: ':page', component: MoviesListComponent},
       {path: ':page/:id', component: MovieInfoComponent}
     ]
-  }
+  },
+  {path: 'genres', component: GenresComponent, children:[
+      {path: ':name',component: MoviesByGenreComponent}
+    ]}
 ];
 
 @NgModule({
@@ -26,6 +31,8 @@ let routes: Routes = [
     MoviesListComponent,
     MovieCardComponent,
     MovieInfoComponent,
+    GenresComponent,
+    MoviesByGenreComponent,
   ],
   imports: [
     BrowserModule,
