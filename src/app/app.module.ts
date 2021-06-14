@@ -11,6 +11,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MovieInfoComponent} from './components/movie-info/movie-info.component';
 import {GenresComponent} from './components/genres/genres.component';
 import { MoviesByGenreComponent } from './components/movies-by-genre/movies-by-genre.component';
+import { StarRatingComponent } from './components/star-rating/star-rating.component';
 
 let routes: Routes = [
   {
@@ -33,6 +34,7 @@ let routes: Routes = [
     MovieInfoComponent,
     GenresComponent,
     MoviesByGenreComponent,
+    StarRatingComponent,
   ],
   imports: [
     BrowserModule,
