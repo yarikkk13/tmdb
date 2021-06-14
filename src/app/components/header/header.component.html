@@ -1,9 +1,14 @@
-<div style="display: flex;background: azure">
-  <div style="display: flex; justify-content: center;width: 50%">
-    <button [routerLink]="['movies']">movies</button>
+<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="btn-group" role="group" aria-label="First group">
+    <button type="button" class="btn btn-outline-secondary" [routerLink]="[page]">{{page}}</button>
+    <button type="button" class="btn btn-outline-secondary" [routerLink]="[page+1]">{{page + 1}}</button>
+    <button type="button" class="btn btn-outline-secondary" [routerLink]="[page+2]">{{page + 2}}</button>
+    <button type="button" class="btn btn-outline-secondary" [routerLink]="[page+3]">{{page + 3}}</button>
+    <button type="button" class="btn btn-outline-secondary" [routerLink]="[page+4]">{{page + 4}}</button>
   </div>
-  <div style="display: flex; justify-content: center;width: 30%">
-    <button [routerLink]="['genres']">genres</button>
-  </div>
+  <form class="d-flex">
+    <input class="form-control me-2" type="search" placeholder="select page" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Submit</button>
+  </form>
 </div>
 <router-outlet></router-outlet>

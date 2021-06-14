@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HeaderService} from "../../services/header.service";
 
 @Component({
   selector: 'app-header',
@@ -7,11 +7,14 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  page:number
 
-  constructor() {
+  constructor(private headerService: HeaderService) {
   }
 
   ngOnInit(): void {
+    this.headerService.getMovies()
+      .subscribe(value => this.page = value.page)
   }
 
 }
